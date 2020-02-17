@@ -1,0 +1,41 @@
+[
+        {
+
+            "supervisor":"matias",
+            "zona":"Frutales",
+            "gradosZona":"30°",
+            "arboles":[{
+                        "especie":"manzano",
+                        "temperaturaIdeal":"28°",
+                        "riego":"lunes-viernes"},{
+                        "especie":"uva",
+                        "temperaturaIdeal":"30°",
+                        "riego":"miercoles"},{
+                        "especie":"guindo",
+                        "temperaturaIdeal":"26°",
+                        "riego":"lunes-viernes"},{
+                        "especie":"naranjo",
+                        "temperaturaIdeal":"30°",
+                        "riego":"miercoles"
+                    }]
+        },
+        {
+            "supervisor":"jose",
+            "zona":"Hortalizas",
+            "gradosZona":"30°",
+                    "arboles":[{
+                                "especie":"acelga",
+                                "temperaturaIdeal":"28°",
+                                "riego":"martes"},
+                                {"especie":"cebolla",
+                                "temperaturaIdeal":"30°",
+                                "riego":"martes"},
+                                {"especie":"papa",
+                                "temperaturaIdeal":"28°",
+                                "riego":"martes"},
+
+                                {"especie":"zapallo",
+                                "temperaturaIdeal":"30°",
+                                "riego":"martes"}
+                       ]}
+]
