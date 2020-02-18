@@ -1,7 +1,7 @@
 [
-        {
+    {
 
-            "supervisor":"matias",
+         "supervisor":"matias",
             "zona":"Frutales",
             "gradosZona":"30°",
             "arboles":[{
