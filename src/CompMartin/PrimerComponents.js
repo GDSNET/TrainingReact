@@ -1,11 +1,35 @@
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native-web'
+import {Text, View, StyleSheet, TouchableOpacity} from 'react-native-web'
 import { Component } from "react";
 import Data from '../APIS/ArbolesJSON.json'
+import Arbolitos from './ArbolitosComponents'
 
 
 
 export default class PrimerComponentsMartin extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { estado: null  };
+   }
+
+   componentDidMount(){
+     this.funRecuperaDatos()
+   }
+
+
+async funGuardarDatos(){
+    await this.setState({estado: 'denuevo'})
+    await localStorage.setItem('misDatos', this.state.estado)
+    
+
+  }
+
+  funRecuperaDatos(){
+  
+    const Respuesta  = localStorage.getItem('misDatos')
+    this.setState({estado: Respuesta})
+  }
 
   funMuestraDatos(){
    return Data.map((fila, i)=>{
@@ -21,10 +45,21 @@ export default class PrimerComponentsMartin extends Component {
   }
 
   funMuestraArboles(arbolitos){
+
+    
     return arbolitos.map((fila, i)=>{
  
      return(
-     <Text key={i} style={styles.container}>Arbol: {fila.especie}</Text>
+
+      <Arbolitos 
+      estado={this.state.estado}
+      especie={fila.especie}
+      temperaturaIdeal={fila.temperaturaIdeal}
+      riego={fila.riego}
+      i={i}
+      />
+
+
      )
      })
  
@@ -39,6 +74,14 @@ export default class PrimerComponentsMartin extends Component {
             
 
             {this.funMuestraDatos()}
+
+            <TouchableOpacity onPress={()=>{this.funGuardarDatos()}}>
+              <Text>Guardar Datos Locales</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={()=>{this.funRecuperaDatos()}}>
+              <Text>Recuperar </Text>
+            </TouchableOpacity>
 
  </View>
     );
